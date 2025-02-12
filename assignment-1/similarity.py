@@ -59,17 +59,21 @@ for document_id, tokenized_content in tokenized_documents:
 # --> Add your Python code here
 highest_similarity = -999
 best_pair = None
+pairs_seen = set()
 
 for document_id_a, document_data_a in doc_term_matrix:
-    print(f"Comparing document {document_id_a} to rest of collection...")
+    print(f"Checking document {document_id_a}...")
     for document_id_b, document_data_b in doc_term_matrix:
-        if document_id_a == document_id_b:
-            # Skip over the same document
+        pair_forward = (document_id_a, document_id_b)
+        pair_backward = (document_id_b, document_id_a)
+        if document_id_a == document_id_b or pair_forward in pairs_seen or pair_backward in pairs_seen:
+            # Skip over the same document AND document pairs that have already been seen
             continue
         similarity = cosine_similarity([document_data_a], [document_data_b])
         if similarity > highest_similarity:
             highest_similarity = similarity
-            best_pair = (document_id_a, document_id_b)
+            best_pair = pair_forward
+        pairs_seen.add(pair_forward)
 
 # Print the highest cosine similarity following the information below
 # The most similar documents are document 10 and document 100 with cosine similarity = x
