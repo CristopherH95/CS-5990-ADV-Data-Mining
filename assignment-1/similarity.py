@@ -1,9 +1,9 @@
 # -------------------------------------------------------------------------
 # AUTHOR: Cristopher Hernandez
 # FILENAME: similarity.py
-# SPECIFICATION: description of the program
+# SPECIFICATION: finds the two most similar documents from a provided "cleaned_documents.csv" file.
 # FOR: CS 5990 (Advanced Data Mining) - Assignment #1
-# TIME SPENT: how long it took you to complete the assignment
+# TIME SPENT: approx. 2.5 hours
 # -----------------------------------------------------------*/
 
 #IMPORTANT NOTE: DO NOT USE ANY ADVANCED PYTHON LIBRARY TO COMPLETE THIS CODE SUCH AS numpy,
