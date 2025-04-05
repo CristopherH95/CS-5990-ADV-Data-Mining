@@ -1,4 +1,4 @@
-# Assignment 1: PCA
+# Assignment 2: PCA
 
 This assignment response implements a simple Python program that performs the following tasks:
 
