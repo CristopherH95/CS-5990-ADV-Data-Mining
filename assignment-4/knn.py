@@ -14,6 +14,8 @@ import typing
 
 from sklearn.neighbors import KNeighborsClassifier
 
+
+# noinspection DuplicatedCode
 def read_weather_dataset(path: str) -> typing.Tuple[np.ndarray, np.ndarray]:
     dataset_frame = pd.read_csv(
         path,
